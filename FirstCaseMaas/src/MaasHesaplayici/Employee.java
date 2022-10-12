@@ -59,10 +59,15 @@ public class Employee {
         System.out.println("--------------------");
         System.out.println("Vergi: " + tax());
         System.out.println("bonus: " + bonus());
+        System.out.println("-------------------------------");
+        System.out.println("Vergili maas: "  + (this.salary- tax()));
+        System.out.println("bonuslu maas: "  + (this.salary+ bonus()));
+        System.out.println("---------------------------");
         System.out.println("Maas Artisi: " + raiseSalary());
+        System.out.println("Maas Artisi toplam: " + (raiseSalary()-tax()+bonus()));
         System.out.println("--------------------");
-        System.out.println("vergi+bonus+maas: " +  (this.salary - tax() +bonus()));
-        System.out.println("toplam maas: " +  (this.salary - tax() +bonus()+ raiseSalary()));
+        System.out.println("Vergi ve bonuslarla birlikte maas: " +  (this.salary - tax() +bonus()));
+        System.out.println("Toplam maas: " +  (this.salary - tax() +bonus()+ raiseSalary()));
 
 
 
