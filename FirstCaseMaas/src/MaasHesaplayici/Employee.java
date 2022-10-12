@@ -7,8 +7,6 @@ public class Employee {
     int workHours;
     int hireYear;
 
-
-
     public Employee(String name, int salary, int workHours, int hireYear) {
         this.name = name;
         this.salary = salary;
@@ -22,20 +20,20 @@ public class Employee {
         }else{
             return this.salary*0.03;
         }
-
-
     }
+
 
     //BONUS HESAPLAMA
     public double bonus() {
         if (this.workHours > 40) {
-            return (this.workHours - 40) * 30;
+            return (this.workHours - 40) * 30; //Calisma saatinden, istenilen saati cikarip 30 ile çarpıyoruz.
         }else{
             return 0;
         }
     }
 
-    //ZAM HESAPLAMA
+
+      //ZAM HESAPLAMA
     public double raiseSalary(){
         int year=2021-this.hireYear;
 
@@ -49,28 +47,20 @@ public class Employee {
         }
     }
 
-
-
+        //PERSONEL INFO
     public void tostring(){
         System.out.println("ad: " + this.name);
         System.out.println("Maas: " + this.salary);
-        System.out.println("Haftalik Saat: " + this.workHours);
-        System.out.println("Giris yili: " + this.hireYear);
-        System.out.println("--------------------");
+        System.out.println("Haftalik Calisma Saati: " + this.workHours);
+        System.out.println("Ise Giris yili: " + this.hireYear);
+        System.out.println("---------------------------");
         System.out.println("Vergi: " + tax());
         System.out.println("bonus: " + bonus());
-        System.out.println("-------------------------------");
-        System.out.println("Vergili maas: "  + (this.salary- tax()));
-        System.out.println("bonuslu maas: "  + (this.salary+ bonus()));
         System.out.println("---------------------------");
         System.out.println("Maas Artisi: " + raiseSalary());
-        System.out.println("Maas Artisi toplam: " + (raiseSalary()-tax()+bonus()));
-        System.out.println("--------------------");
+        System.out.println("---------------------------");
         System.out.println("Vergi ve bonuslarla birlikte maas: " +  (this.salary - tax() +bonus()));
-        System.out.println("Toplam maas: " +  (this.salary - tax() +bonus()+ raiseSalary()));
-
-
-
+        System.out.println("Toplam maas: " +  (this.salary +bonus()));
     }
 }
 
