@@ -6,6 +6,8 @@ public class Employee {
     int salary;
     int workHours;
     int hireYear;
+    double vergi;
+    double maas;
 
     public Employee(String name, int salary, int workHours, int hireYear) {
         this.name = name;
@@ -14,22 +16,44 @@ public class Employee {
         this.hireYear = hireYear;
     }
 
-     public void tax(int salary){
-
-        if (salary>1000){
-            double vergi=salary*0.03;
-            double maas=salary-vergi;
-        }
-
-    }
-
-     public void bonus(int workHours){
-        if(workHours>40){
-
+     public void tax(){
+        tostring();
+        if (this.salary>1000) {
+            vergi = this.salary * 0.03;
+            maas = this.salary - vergi;
+            System.out.println("vergili maasi: " + maas);
         }
     }
+
+
+
+     public void bonus(){
+        if(this.workHours>40){
+                while(true){
+                    this.salary+=30;
+                }
+        }
+    }
+
+
 
     public void raiseSalary(){
+        double year=2021-this.hireYear;
+        double yeni=0.0;
+
+        if (year<9){
+            yeni=this.salary*0.05;
+            yeni+=this.salary;
+            System.out.println("zamli maasi: " + yeni);
+        } else if (year>=9 && year<20) {
+            yeni=this.salary*0.10;
+            yeni+=this.salary;
+            System.out.println("zamli maasi: " + yeni);
+        }else{
+            yeni=this.salary*0.15;
+            yeni+=this.salary;
+            System.out.println("zamli maasi: " + yeni);
+        }
 
     }
 
