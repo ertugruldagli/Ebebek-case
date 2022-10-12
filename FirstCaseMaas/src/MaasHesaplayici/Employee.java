@@ -38,12 +38,12 @@ public class Employee {
         int year=2021-this.hireYear;
 
         if(year>19) {
-            return this.salary*0.15;
+            return (this.salary + bonus() - tax()) * 0.15;
         }else if(year>9 && year <20){
-            return this.salary*0.10;
+            return (this.salary + bonus() - tax()) * 0.10;
         }
         else {
-            return this.salary*0.05;
+            return (this.salary + bonus() - tax()) * 0.05;
         }
     }
 
@@ -60,7 +60,7 @@ public class Employee {
         System.out.println("Maas Artisi: " + raiseSalary());
         System.out.println("---------------------------");
         System.out.println("Vergi ve bonuslarla birlikte maas: " +  (this.salary - tax() +bonus()));
-        System.out.println("Toplam maas: " +  (this.salary +bonus()));
+        System.out.println("Toplam maas: " +  (this.salary -tax() + bonus() + raiseSalary()));
     }
 }
 
