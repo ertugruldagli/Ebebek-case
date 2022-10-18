@@ -38,12 +38,12 @@ public class Employee {
         int year=2021-this.hireYear;
 
         if(year>19) {
-            return (this.salary + bonus() - tax()) * 0.15;
+            return this.salary*0.15;
         }else if(year>9 && year <20){
-            return (this.salary + bonus() - tax()) * 0.10;
+            return this.salary*0.10;
         }
         else {
-            return (this.salary + bonus() - tax()) * 0.05;
+            return this.salary*0.05;
         }
     }
 
